@@ -1,0 +1,577 @@
+@charset "UTF-8";
+
+/* --- 1. БАЗОВЫЕ НАСТРОЙКИ (Наш стандарт) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a !important; 
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- ФИНАЛЬНЫЙ ФИКС ШАПКИ И ЛОГОТИПА --- */
+.header, 
+.header.header-fixed, 
+.header-fixed-shrink {
+    background: #000 !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.header {
+    background: #000 !important;
+    padding: 20px 0 !important;
+    border-bottom: 1px solid #333 !important;
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+/* --- ФИКС ЛОГОТИПА ПО СКРИНШОТУ --- */
+
+.logo {
+    display: flex !important;
+    flex-direction: row !important; /* Ставим в ряд: картинка | текст */
+    align-items: center !important; /* Выравниваем по центру высоты */
+    text-align: left !important;
+    text-decoration: none !important;
+    gap: 15px !important; /* Расстояние между бриллиантом и текстом */
+    width: auto !important;
+}
+
+.logo img {
+    width: 65px !important; /* Размер бриллианта */
+    height: auto !important;
+    margin: 0 !important; /* Убираем лишние отступы */
+    flex-shrink: 0; /* Чтобы картинка не сжималась */
+}
+
+.logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 0 !important; /* Убираем зазоры между строками */
+}
+
+.logo-text h1 {
+    font-size: 24px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+}
+
+.logo-text p {
+    font-size: 12px !important;
+    color: #ffffff !important; /* Твой голубой неон */
+    margin: 2px 0 0 0 !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+
+/* Настраиваем слоган, чтобы он был единым целым с названием */
+.logo-text small {
+    font-size: 10px !important;
+    color: #ffffff !important; /* Тот же цвет, что и у CREATIVE UNIVERSITY */
+    margin: 0 !important; /* Убираем отступ сверху */
+    line-height: 1 !important;
+    text-transform: uppercase;
+    display: block !important;
+    font-weight: 600 !important;
+}
+
+/* Фикс для шапки, чтобы лого не липло к краям */
+.header .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 15px !important;
+}
+/* Навигация (меню) */
+.nav-collapse {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.nav-item-child {
+    white-space: nowrap !important; /* Запрещает перенос текста на новую строку */
+    padding: 10px 15px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #00e5ff !important;
+    font-size: 14px !important;
+}
+
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Убирает перенос пунктов меню */
+    gap: 10px !important;
+}
+
+.nav-item-child:hover {
+    color: #ff00ff !important; /* Розовый неон при наведении */
+    background: transparent !important;
+}
+
+/* Отступ тела сайта, чтобы шапка не закрывала контент */
+body {
+    padding-top: 100px !important;
+}
+
+/* --- 3. ГЛАВНЫЙ ЭКРАН  --- */
+/* --- КНОПКА LUMINA (Белая -> Фиолетовая) --- */
+
+.btn-lumina-solid {
+    display: inline-block;
+    padding: 18px 45px; /* Чуть побольше, как на фото */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px; /* Скругление */
+    transition: all 0.3s ease;
+    
+    /* 1. ОБЫЧНОЕ СОСТОЯНИЕ (Как на фото 1) */
+    background-color: #ffffff !important; /* Чисто белый фон */
+    color: #9d50bb !important; /* Фиолетовый текст */
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Легкая тень */
+}
+
+/* 2. СОСТОЯНИЕ ПРИ НАВЕДЕНИИ (Как на фото 2) */
+.btn-lumina-solid:hover {
+    background-color: #9d50bb !important; /* Фиолетовый фон */
+    color: #ffffff !important; /* Белый текст */
+    
+    /* Неоновое свечение */
+    box-shadow: 0 0 25px rgba(157, 80, 187, 0.8), 
+                0 0 10px rgba(157, 80, 187, 0.5) !important;
+    
+    transform: translateY(-2px); /* Легкий подъем */
+}
+
+/* Отступ для кнопки */
+.margin-t-40 {
+    margin-top: 40px;
+}
+
+/* Заголовок для преимуществ в голубом неоне для разнообразия */
+.neon-title-cyan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px !important;
+    color: #00e5ff !important;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* Отступ для кнопки */
+.margin-t-40 {
+    margin-top: 40px;
+}
+/* Настройка контента внутри слайда */
+.promo-content {
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон для читаемости текста */
+    padding: 40px;
+    border-left: 5px solid #00e5ff; /* Наша синяя полоска слева */
+    display: inline-block;
+    text-align: left;
+}
+
+.slide-item {
+    display: flex;
+    align-items: center; /* Центрируем текст по вертикали */
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- СТИЛИЗАЦИЯ СЛАЙДЕРА LUMINA --- */
+
+.campus-slider {
+    padding: 60px 0;
+    background: #0a0a0a;
+}
+
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #9d50bb !important; /* Наш фиолетовый */
+    text-shadow: 0 0 15px rgba(157, 80, 187, 0.6);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.slider-window {
+    position: relative;
+    max-width: 1100px;
+    height: 550px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #333;
+    background: #000;
+}
+
+.sliderB > input { display: none; }
+
+/* Стрелки навигации */
+.sliderB > label {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #00e5ff; /* Голубой неон */
+    background: rgba(0, 0, 0, 0.7);
+    color: #00e5ff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.sliderB > label:hover {
+    background: #00e5ff;
+    color: #000;
+    box-shadow: 0 0 15px #00e5ff;
+}
+
+/* Логика показа стрелок и слайдов */
+.sliderB > input:checked + .campus-slide + label,
+.sliderB > input:checked + .campus-slide + label + label { display: flex; }
+.sliderB > input:checked + .campus-slide + label { left: 25px; }
+.sliderB > input:checked + .campus-slide + label + label { right: 25px; }
+
+.lbl-prev:after { content: '‹'; font-size: 35px; }
+.lbl-next:after { content: '›'; font-size: 35px; }
+
+.campus-slide {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.sliderB > input:checked + .campus-slide {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Инфо-блок (Твои настройки с нашими цветами) */
+.campus-info {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px 35px;
+    border-left: 4px solid #9d50bb; /* Фиолетовая полоса */
+    border-radius: 0 10px 10px 0;
+    max-width: 450px;
+    z-index: 5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.campus-info h3 {
+    color: #9d50bb; /* Фиолетовое название */
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.campus-info p {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* --- СТИЛИ ДЛЯ БЛОКОВ ИСТОРИИ И ПРЕИМУЩЕСТВ --- */
+
+.section-dark {
+    background: #000 !important;
+    padding: 80px 0;
+}
+
+/* Заголовок с неоном */
+.neon-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px !important;
+    color: #9d50bb !important;
+    text-shadow: 0 0 20px rgba(157, 80, 187, 0.8);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Текст истории */
+.history-text {
+    font-size: 17px !important; /* Сделали крупнее */
+    line-height: 1.8 !important;
+    color: #e0e0e0 !important;
+    font-weight: 300;
+}
+
+.history-text strong {
+    color: #00e5ff; /* Подсветим название вуза голубым */
+}
+
+/* Карточки преимуществ */
+.service-card {
+    background: #0a0a0a !important; /* Почти черный */
+    border: 1px solid #333;
+    padding: 40px 30px;
+    height: 100%;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.service-card:hover {
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Иконки */
+.service-icon {
+    font-size: 45px !important;
+    color: #00e5ff !important; /* Голубой неон для иконок */
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Заголовки в карточках */
+.service-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff !important;
+    font-size: 22px !important;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Описание в карточках */
+.service-info p {
+    font-size: 16px !important;
+    color: #aaaaaa !important;
+    line-height: 1.6;
+}
+
+
+/* --- 4. СЕКЦИИ --- */
+section, .content-lg {
+    padding: 60px 0 !important;
+    background-color: #0a0a0a !important;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 36px) !important;
+    color: #9d50bb !important; 
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(157, 80, 187, 0.7);
+    text-align: center;
+    margin-bottom: 40px !important;
+}
+
+/* --- СЕКЦИЯ ЖИЗНЬ В LCU --- */
+
+/* Контейнер для картинки, который задает единый размер */
+.work-img-wrap {
+    width: 100%;
+    height: 300px; /* Фиксированная высота для всех! */
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Сама картинка внутри контейнера */
+.work-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Важно: картинка заполнит блок, не искажаясь */
+    transition: transform 0.5s ease;
+}
+
+/* Эффект при наведении как в лучших галереях */
+.work-img-wrap:hover {
+    border-color: #9d50bb; /* Наш фиолетовый неон */
+    box-shadow: 0 0 20px rgba(157, 80, 187, 0.4);
+    transform: translateY(-5px);
+}
+
+.work-img-wrap:hover img {
+    transform: scale(1.1); /* Легкое приближение при наведении */
+}
+
+/* Если хочешь, чтобы высота была поменьше или побольше, просто меняй 'height: 300px' выше */
+
+/* --- 5. КАРТОЧКИ СПЕЦИАЛЬНОСТЕЙ (Наш стиль сеток) --- */
+.bg-color-sky-light {
+    background-color: #000 !important;
+}
+
+.pricing {
+    background: #0a0a0a !important;
+    border: 2px solid #333 !important;
+    padding: 30px !important;
+    border-radius: 10px !important;
+    transition: 0.3s !important;
+}
+
+.pricing:hover, .pricing-active {
+    border-color: #00e5ff !important;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5) !important;
+}
+
+.pricing-icon {
+    color: #00e5ff !important;
+    font-size: 40px;
+}
+
+.pricing h3 {
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+}
+
+.pricing-list-item {
+    color: #ccc !important;
+    border-bottom: 1px solid #222 !important;
+    font-size: 14px;
+}
+
+/* --- СТИЛЬ ДЛЯ КОНТАКТОВ --- */
+
+#contact h3 {
+    color: #00e5ff !important; /* Голубой акцент для подзаголовков */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+#contact p {
+    color: #ffffff !important; /* Чисто белый текст вместо серого */
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.contact-item {
+    padding: 20px;
+    transition: 0.3s;
+}
+
+/* Ссылка для почты */
+.contact-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    color: #00e5ff !important;
+    border-color: #00e5ff;
+}
+
+/* --- 6. НАША ФОРМА ОБРАТНОЙ СВЯЗИ --- */
+.spec-section {
+    background-color: #000 !important;
+    padding: 80px 0;
+}
+
+.feedback-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.feedback-form label {
+    color: #9d50bb !important;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.feedback-form input, 
+.feedback-form select, 
+.feedback-form textarea {
+    width: 100%;
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background: #fff !important;
+    color: #9d50bb !important;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #9d50bb !important;
+    color: #fff !important;
+}
+
+/* --- 7. ФУТЕР --- */
+footer {
+    background: #000 !important;
+    padding: 40px 0 !important;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #666 !important;
+    font-size: 12px;
+}
+
+/* --- ФИКС ЦВЕТА ПРИ СКРОЛЛЕ --- */
+
+/* Перекрываем любые изменения цвета фона при движении страницы вниз */
+.header, 
+.header.header-fixed, 
+.header.navbar-fixed-top, 
+.header-fixed-shrink {
+    background: #000 !important; /* Всегда черный */
+    background-color: #000 !important;
+    border-bottom: 1px solid #333 !important;
+    transition: none !important; /* Убираем анимацию перехода в белый */
+}
+
+/* Гарантируем, что текст и логотип не поменяют цвет на темный */
+.header.header-fixed .nav-item-child,
+.header.header-fixed .logo-text h1,
+.header.header-fixed .logo-text p {
+    color: #ffffff !important;
+}
+
+.header.header-fixed .nav-item-child:hover {
+    color: #ff00ff !important; /* Оставляем наш розовый неон при наведении */
+}
+
+/* Если в шаблоне используется инверсия логотипа при скролле — отключаем её */
+.header.header-fixed .logo img {
+    filter: none !important;
+}
